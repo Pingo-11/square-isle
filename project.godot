@@ -10,7 +10,7 @@ config_version=5
 
 [application]
 
-config/name="Grid-Movement"
+config/name="Square Isle"
 run/main_scene="uid://pvg2w67q4ui4"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"
@@ -23,3 +23,13 @@ window/size/mode=2
 window/size/window_width_override=1280
 window/size/window_height_override=720
 window/stretch/mode="viewport"
+
+[file_customization]
+
+folder_colors={
+"res://Entities/Player/States/": "red"
+}
+
+[rendering]
+
+textures/canvas_textures/default_texture_filter=0
