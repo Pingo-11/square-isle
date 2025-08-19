@@ -11,16 +11,8 @@ func process_input(event: InputEvent) -> PlayState:
 	# This move componant can then talk to PlayState
 	var dir = Vector2.ZERO
 	
-	if Input.is_action_pressed("ui_right"):
-		dir = Vector2.RIGHT
-	if Input.is_action_pressed("ui_left"):
-		dir = Vector2.LEFT
-	if Input.is_action_pressed("ui_up"):
-		dir = Vector2.UP
-	if Input.is_action_pressed("ui_down"):
-		dir = Vector2.DOWN
-	
-	if dir != Vector2.ZERO:
-		parent.direction = dir
+	if Input.is_action_pressed("ui_right") or Input.is_action_pressed("ui_left") \
+	or Input.is_action_pressed("ui_down") or Input.is_action_pressed("ui_up"):
 		return move_state
+
 	return null

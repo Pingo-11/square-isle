@@ -40,9 +40,10 @@ tile_map_data = PackedByteArray("AAAAAAAACAADAAAAAAAAAAEACAAFAAAAAAAAAAIACAAHAAA
 tile_set = SubResource("TileSet_pkg7o")
 collision_enabled = false
 
-[node name="Obstacles" type="TileMapLayer" parent="Terrain"]
+[node name="Obstacles" type="TileMapLayer" parent="Terrain" groups=["obstacles"]]
 tile_map_data = PackedByteArray("AAANAAYABAAAAAAAAAANAAUABAAAAAAAAAAMAAUABAACAAAAAAALAAUABAABAAAAAAAKAAUABAABAAAAAAALAAQABAADAAAAAAAMAAQABAADAAAAAAANAAQABAACAAAAAAANAAMABAADAAAAAAAMAAMABAACAAAAAAAMAAYABAADAAAAAAAIAAoABAADAAAAAAAIAAkABAAAAAAAAAAFAAQABAACAAAAAAAFAAMABAABAAAAAAAEAAMABAABAAAAAAAGAAMABAAAAAAAAAA=")
 tile_set = SubResource("TileSet_ioo17")
 
 [node name="player" parent="." instance=ExtResource("2_tlwt5")]
 position = Vector2(8, 8)
+move_animation_speed = 0.15
