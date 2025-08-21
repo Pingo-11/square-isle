@@ -1,9 +1,12 @@
-[gd_scene load_steps=9 format=4 uid="uid://pvg2w67q4ui4"]
+[gd_scene load_steps=12 format=4 uid="uid://pvg2w67q4ui4"]
 
 [ext_resource type="Script" uid="uid://dm3kn586q888l" path="res://world.gd" id="1_fj7yv"]
 [ext_resource type="Texture2D" uid="uid://bq10dg0auulcs" path="res://Entities/Terrain/Ground.png" id="2_aqk2v"]
 [ext_resource type="PackedScene" uid="uid://dpy7q11xtyduo" path="res://Entities/Player/Player.tscn" id="2_tlwt5"]
 [ext_resource type="Texture2D" uid="uid://drbkw5lthajw1" path="res://Entities/Terrain/Obstacles.png" id="3_036b0"]
+[ext_resource type="Script" uid="uid://c4nla1jswhl4s" path="res://Scripts/Spawners/level_box_spawners.gd" id="4_dwbse"]
+[ext_resource type="PackedScene" uid="uid://c6a1aepxp850j" path="res://Entities/Camera/follow_camera.tscn" id="5_036b0"]
+[ext_resource type="PackedScene" uid="uid://b5hisrbnjxff0" path="res://Entities/Interactables/Level Boxes/level_box.tscn" id="5_pkg7o"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_dwbse"]
 texture = ExtResource("2_aqk2v")
@@ -44,6 +47,26 @@ collision_enabled = false
 tile_map_data = PackedByteArray("AAANAAYABAAAAAAAAAANAAUABAAAAAAAAAAMAAUABAACAAAAAAALAAUABAABAAAAAAAKAAUABAABAAAAAAALAAQABAADAAAAAAAMAAQABAADAAAAAAANAAQABAACAAAAAAANAAMABAADAAAAAAAMAAMABAACAAAAAAAMAAYABAADAAAAAAAIAAoABAADAAAAAAAIAAkABAAAAAAAAAAFAAQABAACAAAAAAAFAAMABAABAAAAAAAEAAMABAABAAAAAAAGAAMABAAAAAAAAAA=")
 tile_set = SubResource("TileSet_ioo17")
 
+[node name="level box spawners" type="Node2D" parent="Terrain"]
+script = ExtResource("4_dwbse")
+num_of_spawn_points = 2
+spawn_node = ExtResource("5_pkg7o")
+
+[node name="level box spawn 1" type="Marker2D" parent="Terrain/level box spawners"]
+position = Vector2(120, 104)
+
+[node name="level box spawn 2" type="Marker2D" parent="Terrain/level box spawners"]
+position = Vector2(232, 152)
+
+[node name="level box spawn 3" type="Marker2D" parent="Terrain/level box spawners"]
+position = Vector2(232, 24)
+
 [node name="player" parent="." instance=ExtResource("2_tlwt5")]
 position = Vector2(8, 8)
 move_animation_speed = 0.15
+
+[node name="FollowCamera" parent="." instance=ExtResource("5_036b0")]
+zoom = Vector2(0.8, 0.8)
+position_smoothing_enabled = true
+target_path = NodePath("../player")
+lerp_speed = 0.1

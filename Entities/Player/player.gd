@@ -22,3 +22,7 @@ func _process(delta: float) -> void:
 # Called when input is... input
 func _unhandled_input(event: InputEvent) -> void:
 	state_machine.process_input(event)
+	
+# Called every physics frame
+func _physics_process(delta: float) -> void:
+	state_machine.process_physics(delta)

@@ -4,7 +4,8 @@ extends PlayState
 var move_state: PlayState
 
 func enter():
-	print("entered idle")
+	#print("entered idle")
+	pass
 
 func process_input(event: InputEvent) -> PlayState:
 	# TODO implement move component directly to player to generalise movement

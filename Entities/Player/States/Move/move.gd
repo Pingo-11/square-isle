@@ -17,7 +17,7 @@ func process_frame(delta: float) -> PlayState:
 	return null
 
 func enter()-> void:
-	print("entered move")
+	#print("entered move")
 	try_move()
 
 func try_move() -> bool:
@@ -28,7 +28,6 @@ func try_move() -> bool:
 	# TODO stop priority (currently right, left, up, down)
 	if Input.get_action_strength("ui_right"):
 		dir = Vector2.RIGHT
-		print("recieve right")
 	elif Input.get_action_strength("ui_left"):
 		dir = Vector2.LEFT
 	elif Input.get_action_strength("ui_up"):

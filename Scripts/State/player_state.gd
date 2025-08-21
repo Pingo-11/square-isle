@@ -14,3 +14,6 @@ func process_frame(delta: float) -> PlayState:
 	
 func process_input(event: InputEvent) -> PlayState:
 	return null
+
+func process_physics(delta: float) -> PlayState:
+	return null

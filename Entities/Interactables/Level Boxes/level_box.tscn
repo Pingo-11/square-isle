@@ -1,0 +1,73 @@
+[gd_scene load_steps=11 format=3 uid="uid://b5hisrbnjxff0"]
+
+[ext_resource type="Texture2D" uid="uid://b2unc2idoa1cg" path="res://Entities/Interactables/Level Boxes/Level Box-Sheet.png" id="1_h511d"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_15iht"]
+atlas = ExtResource("1_h511d")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_djw7l"]
+atlas = ExtResource("1_h511d")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hplcb"]
+atlas = ExtResource("1_h511d")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_blcw5"]
+atlas = ExtResource("1_h511d")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cgyfh"]
+atlas = ExtResource("1_h511d")
+region = Rect2(64, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ctqre"]
+atlas = ExtResource("1_h511d")
+region = Rect2(80, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_chgi5"]
+atlas = ExtResource("1_h511d")
+region = Rect2(96, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_52cas"]
+atlas = ExtResource("1_h511d")
+region = Rect2(112, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_q6cst"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_15iht")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_djw7l")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hplcb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_blcw5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cgyfh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ctqre")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_chgi5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_52cas")
+}],
+"loop": true,
+"name": &"default",
+"speed": 15.0
+}]
+
+[node name="Level Box" type="Node2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_q6cst")
+frame_progress = 0.193608
