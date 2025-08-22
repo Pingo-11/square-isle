@@ -7,9 +7,10 @@ var current_state: PlayState
 
 # Initialise state machine, giving each child a reference to parent
 # Set start state to current state
-func init(parent: Player) -> void:
+func init(parent: Player, move_component: MoveInterface) -> void:
 	for child in get_children():
 		child.parent = parent
+		child.move_component = move_component
 	
 	swap_state(starting_state)
 

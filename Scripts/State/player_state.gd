@@ -2,6 +2,7 @@ extends Node
 class_name PlayState
 
 var parent: CharacterBody2D
+var move_component
 
 func enter() -> void:
 	pass

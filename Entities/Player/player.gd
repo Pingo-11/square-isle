@@ -3,6 +3,8 @@ extends CharacterBody2D
 
 @onready
 var state_machine = $state_machine
+@onready
+var move_component = $player_move_component
 
 @export 
 var move_animation_speed = 0.09
@@ -13,7 +15,7 @@ var direction = Vector2.ZERO
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	#initialise state machine, with reference to player
-	state_machine.init(self)
+	state_machine.init(self, move_component)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
