@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://dpy7q11xtyduo"]
+[gd_scene load_steps=9 format=3 uid="uid://dpy7q11xtyduo"]
 
 [ext_resource type="Script" uid="uid://x3e62o0t5ov4" path="res://Entities/Player/player.gd" id="1_xhfnw"]
 [ext_resource type="Texture2D" uid="uid://dsu5kr7vx6yxa" path="res://Entities/Player/Player.png" id="2_kpjcp"]
@@ -6,6 +6,7 @@
 [ext_resource type="Script" uid="uid://b3a3x5rl4jr3a" path="res://Entities/Player/States/Idle/idle.gd" id="4_1des2"]
 [ext_resource type="Script" uid="uid://c47uk8dspbntr" path="res://Entities/Player/States/Move/move.gd" id="5_an6q6"]
 [ext_resource type="Script" uid="uid://bifst15uw1vql" path="res://Entities/Player/player_move_component.gd" id="6_t38ms"]
+[ext_resource type="Script" uid="uid://s1mxgmcvbvu" path="res://Entities/Player/interaction_component.gd" id="7_hj1c0"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xhfnw"]
 size = Vector2(14, 14)
@@ -34,3 +35,9 @@ idle_state = NodePath("../idle")
 
 [node name="player_move_component" type="Node" parent="."]
 script = ExtResource("6_t38ms")
+
+[node name="interaction_component" type="Node" parent="."]
+script = ExtResource("7_hj1c0")
+group_name = "Interactable"
+
+[connection signal="reached_new_cell" from="state_machine/move" to="interaction_component" method="_on_move_reached_new_cell"]

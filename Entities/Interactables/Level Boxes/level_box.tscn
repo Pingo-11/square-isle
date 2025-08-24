@@ -1,5 +1,6 @@
-[gd_scene load_steps=11 format=3 uid="uid://b5hisrbnjxff0"]
+[gd_scene load_steps=13 format=3 uid="uid://b5hisrbnjxff0"]
 
+[ext_resource type="Script" uid="uid://b3ak8auey37vr" path="res://Entities/Interactables/Level Boxes/level_box.gd" id="1_15iht"]
 [ext_resource type="Texture2D" uid="uid://b2unc2idoa1cg" path="res://Entities/Interactables/Level Boxes/Level Box-Sheet.png" id="1_h511d"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_15iht"]
@@ -66,9 +67,32 @@ animations = [{
 "speed": 15.0
 }]
 
-[node name="Level Box" type="Node2D"]
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_15iht"]
+particle_flag_disable_z = true
+angle_min = -45.0
+angle_max = 45.0
+initial_velocity_min = 61.54
+initial_velocity_max = 101.06
+gravity = Vector3(0, 98, 0)
+color = Color(0.739291, 0.822719, 1, 1)
+turbulence_enabled = true
+turbulence_noise_strength = 0.0
+turbulence_noise_scale = 4.73
+
+[node name="Level Box" type="Node2D" node_paths=PackedStringArray("particles") groups=["Interactable"]]
+script = ExtResource("1_15iht")
+particles = NodePath("test_particles")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_q6cst")
 autoplay = "default"
 frame_progress = 0.193608
+
+[node name="test_particles" type="GPUParticles2D" parent="."]
+rotation = -1.5708
+emitting = false
+amount = 20
+lifetime = 1.92
+one_shot = true
+preprocess = 0.99
+process_material = SubResource("ParticleProcessMaterial_15iht")

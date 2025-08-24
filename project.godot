@@ -15,6 +15,10 @@ run/main_scene="uid://pvg2w67q4ui4"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"
 
+[autoload]
+
+GlobalVariables="*res://Scripts/Global/global_variables.gd"
+
 [display]
 
 window/size/viewport_width=320
@@ -30,6 +34,10 @@ window/stretch/scale_mode="integer"
 folder_colors={
 "res://Entities/Player/States/": "red"
 }
+
+[global_group]
+
+Interactable="Things that can be interacted with"
 
 [rendering]
 

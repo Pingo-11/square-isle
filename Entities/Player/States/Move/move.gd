@@ -1,5 +1,8 @@
 extends PlayState
 
+## When the player reaches a new cell (duh)
+signal reached_new_cell
+
 @export
 var idle_state: PlayState
 
@@ -24,9 +27,8 @@ func try_move() -> bool:
 	var dir = Vector2.ZERO
 	var target_pos : Vector2
 	var target_cell : Vector2
-	# Input to direction mapping
-	# TODO stop priority (currently right, left, up, down)
 	
+	# Input to direction mapping	
 	dir = move_component.get_movement_input()
 	
 	#Handle if object is in the way
@@ -58,4 +60,5 @@ func move_to(target: Vector2):
 
 func on_tween_finish() -> void:
 	move_finish = true
+	reached_new_cell.emit()
 	

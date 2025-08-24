@@ -48,7 +48,7 @@ tile_map_data = PackedByteArray("AAANAAYABAAAAAAAAAANAAUABAAAAAAAAAAMAAUABAACAAA
 tile_set = SubResource("TileSet_ioo17")
 
 [node name="spawner" parent="Terrain" instance=ExtResource("4_pkg7o")]
-num_of_spawn_points = 2
+num_of_spawn_points = 1
 spawn_node = ExtResource("5_pkg7o")
 
 [node name="level box point 1" type="Marker2D" parent="Terrain/spawner"]
